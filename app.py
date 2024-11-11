@@ -5,6 +5,10 @@ from easynmt import EasyNMT
 import fasttext
 from transformers import BertForSequenceClassification, BertTokenizer
 # Google Analytics tracking code
+import nltk
+
+nltk.download('punkt')
+nltk.download('punkt_tab')
            
 tracking_code = """
 <!-- Google tag (gtag.js) -->
