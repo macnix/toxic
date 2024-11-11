@@ -1,0 +1,18 @@
+version: '3'
+services:
+  web:
+    image: toxic-job-api
+    command: streamlit run web_app.py
+    ports:
+      - "8501:8501"  # Streamlit
+    environment:
+      - LANG=en_US.UTF-8
+      - LC_ALL=en_US.UTF-8
+  api:
+    image: toxic-job-api
+    command: uvicorn api_app:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8000:8000"  # FastAPI
+    environment:
+      - LANG=en_US.UTF-8
+      - LC_ALL=en_US.UTF-8
